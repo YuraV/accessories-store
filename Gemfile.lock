@@ -100,6 +100,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    puma (2.11.3)
+      rack (>= 1.1, < 2.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.4.7)
@@ -193,6 +195,7 @@ DEPENDENCIES
   jquery-ui-rails (~> 4.0.4)
   mysql2
   pry
+  puma
   quiet_assets
   rails (= 3.2.16)
   rolify

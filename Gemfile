@@ -19,7 +19,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
+gem 'puma'
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 4.0.4'
 gem 'devise'
