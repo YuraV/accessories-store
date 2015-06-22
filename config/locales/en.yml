@@ -3,3 +3,9 @@
 
 en:
   hello: "Hello world"
+  customers:
+    form:
+      email_identification: Please enter your credentials for further identification
+      email: E-mail
+      name: Name
+      no_thanks: No Thanks !

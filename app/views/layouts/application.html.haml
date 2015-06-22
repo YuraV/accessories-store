@@ -7,10 +7,8 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body{:class => "#{controller_name} #{action_name}"}
-    .navbar.navbar-fixed-top
-      %nav.navbar-inner
-        .container
-          = render 'layouts/navigation'
+    = render 'layouts/debugger_info'
+    = render 'layouts/navigation'
     #main{:role => "main"}
       .container
         .content
@@ -19,3 +17,8 @@
               = render 'layouts/messages'
               = yield
           %footer
+    - if request_customer_email? && !cookies[:do_not_show_email_popup]
+      :javascript
+        new RequestCustomerEmail({
+          url: "#{new_customer_path}"
+        })
