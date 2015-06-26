@@ -5,7 +5,11 @@ module ApplicationHelper
 
   def request_customer_email?
     return true unless cookies[:user_data]
+  begin
     user_data = JSON.parse(cookies[:user_data])
+  rescue JSON::ParserError => e
+    return true
+  end
     user_data['email'].blank?
   end
 end

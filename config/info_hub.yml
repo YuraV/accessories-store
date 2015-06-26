@@ -1,0 +1,22 @@
+---
+currency:
+  usd:
+    iso_name: "USD"
+    to_uah:
+    to_eur:
+    to_pln:
+  uah:
+    iso_name: "UAH"
+    to_usd:
+    to_eur:
+    to_pln:
+  pln:
+    iso_name: "PLN"
+    to_usd:
+    to_uah:
+    to_eur:
+  eur:
+    iso_name: "EUR"
+    to_usd:
+    to_pln:
+    to_uah:

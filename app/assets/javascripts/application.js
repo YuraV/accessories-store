@@ -14,4 +14,6 @@
 //= require jquery.cookie
 //= require jquery_ujs
 //= require jquery.facebox
+//= require jquery.tmpl.min
+//= require underscore
 //= require_tree .
