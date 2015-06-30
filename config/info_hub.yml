@@ -1,22 +1,17 @@
 ---
 currency:
-  usd:
-    iso_name: "USD"
-    to_uah:
-    to_eur:
-    to_pln:
-  uah:
-    iso_name: "UAH"
-    to_usd:
-    to_eur:
-    to_pln:
-  pln:
-    iso_name: "PLN"
-    to_usd:
-    to_uah:
-    to_eur:
-  eur:
-    iso_name: "EUR"
-    to_usd:
-    to_pln:
-    to_uah:
+  USD: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    iso: USD
+    rate: '21.50'
+  EUR: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+    iso: EUR
+    rate: '23.59'
+currency-test:
+- !ruby/object:Currency
+  attributes:
+    iso: EUR
+    rate: 23.59
+- !ruby/object:Currency
+  attributes:
+    iso: USD
+    rate: 21.5

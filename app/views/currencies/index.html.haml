@@ -1,0 +1,31 @@
+%h1 Listing currencies
+
+%table.table.table-striped
+  %tr
+    %th="ID"
+    %th="ISO"
+    %th="RATE"
+    %th
+
+
+  - @currencies.each do |currency|
+    %tr
+      %td=currency.id
+      %td=currency.iso
+      %td=number_with_precision(currency.rate, :precision => 2)
+      %td
+        %div.btn-group
+          %a.btn.dropdown-toggle{"data-toggle"=>"dropdown", "href"=>"#"}
+            Action
+            %span.caret
+
+          %ul.dropdown-menu
+            %li= link_to 'Show', currency
+            %li= link_to 'Edit', edit_currency_path(currency)
+            %li= link_to 'Destroy', currency, :method => :delete, :data => { :confirm => 'Are you sure?' }
+%br
+
+= link_to 'New Currency', new_currency_path
+
+:javascript
+  $('.dropdown-toggle').dropdown()

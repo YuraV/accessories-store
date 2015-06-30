@@ -98,34 +98,6 @@ class InfoHub
   def self.defaults
     {
         currency: {
-
-            usd: {
-                iso_name: "USD",
-                to_uah: 1,
-                to_eur: 1,
-                to_pln: 1
-            },
-
-            uah: {
-                iso_name: "UAH",
-                to_usd: 1,
-                to_eur: 1,
-                to_pln: 1
-            },
-
-            pln: {
-                iso_name: "PLN",
-                to_usd: 1,
-                to_uah: 1,
-                to_eur: 1
-            },
-
-            eur: {
-                iso_name: "EUR",
-                to_usd: 1,
-                to_pln: 2,
-                to_uah: 3,
-            }
         }
     }.freeze
   end

@@ -12,4 +12,8 @@ module ApplicationHelper
   end
     user_data['email'].blank?
   end
+
+  def usd_vs_uah
+    t('currency.usd_price', price: 1)
+  end
 end

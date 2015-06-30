@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  # before_action :set_locale
+  #
+  # def set_locale
+  #   I18n.locale = params[:locale] || I18n.default_locale
+  # end
+
   # short form flash_message(:notice)
   # long form for flash.now
   # flash_message(:error2, {:msg => 'bbb'}, :now)

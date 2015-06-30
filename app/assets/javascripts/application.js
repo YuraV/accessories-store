@@ -16,4 +16,5 @@
 //= require jquery.facebox
 //= require jquery.tmpl.min
 //= require underscore
+//= require bootstrap
 //= require_tree .

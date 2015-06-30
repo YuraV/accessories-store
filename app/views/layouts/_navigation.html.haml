@@ -8,6 +8,8 @@
         - else
           = link_to "Accessories Shop", root_path, :class => 'brand'
         %ul.nav.pull-right
+          %li
+            %a= t('currency.usd_vs_uah', rate: InfoHub.get(:currency, :USD, :rate))
           - if user_signed_in?
             %li{:class=>(params[:controller]=="users"&&params[:action]=="show" ? "active" : "")}
               = link_to current_user.name

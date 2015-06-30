@@ -2,6 +2,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  currency:
+    uah_price: "%{price} UAH"
+    usd_price: "%{price} $"
+    usd_vs_uah: "1 $ = %{rate} UAH"
   hello: "Hello world"
   customers:
     form:

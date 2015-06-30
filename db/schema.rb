@@ -11,12 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150623143914) do
+ActiveRecord::Schema.define(:version => 20150629191027) do
+
+  create_table "currencies", :force => true do |t|
+    t.string   "iso"
+    t.decimal  "rate",       :precision => 8, :scale => 2
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+  end
 
   create_table "customers", :force => true do |t|
     t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "price"
+    t.string   "currency"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   create_table "users", :force => true do |t|
