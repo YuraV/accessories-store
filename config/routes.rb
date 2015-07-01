@@ -1,11 +1,16 @@
 AccessoriesStore::Application.routes.draw do
+  resources :products
+
+
   devise_for :users
 
   resources :currencies
   resources :welcome
   resources :customers
 
-  resources :products
+  resources :products do
+    post :preview, on: :collection
+  end
   root :to => 'welcome#index'
 
 

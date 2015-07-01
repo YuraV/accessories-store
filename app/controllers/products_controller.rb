@@ -21,8 +21,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-
     respond_with @product
+  end
+
+  def preview
+    @product = Product.new(params[:product])
+    render :preview, layout: false, locals: { product: @product } if request.xhr?
+    # respond_with @product, location: preview_products_path(@product), laout: false
   end
 
   private

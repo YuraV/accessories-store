@@ -16,4 +16,8 @@ module ApplicationHelper
   def usd_vs_uah
     t('currency.usd_price', price: 1)
   end
+
+  def rate
+    @rate ||= Currency.by("USD").first.rate
+  end
 end

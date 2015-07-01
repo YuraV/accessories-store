@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title AccessoriesStore
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body{:class => "#{controller_name} #{action_name}"}
+    = render 'layouts/debugger_info'
+    = render 'layouts/navigation'
+    #main{:role => "main"}
+      .container
+        .content
+          .row
+            .span13
+              = render 'layouts/messages'
+              = yield
+          %footer
+    - if request_customer_email? && !cookies[:do_not_show_email_popup]
+      :javascript
+        new RequestCustomerEmail({
+          url: "#{new_customer_path}"
+        })

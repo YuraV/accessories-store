@@ -1,17 +1,1 @@
-.fieldset
-  = image_tag @product.picture.url(:medium)
-
-.fieldset
-  %div
-    product:
-    = @product.name
-  %div
-    -#= show_uah_price_of(@product)
-    %dl
-      %dt
-      %dd= t('currency.uah_price', price: MoneyUtils.usd_to_uah(@product.price))
-    %dl
-      %dt
-      %dd= t('currency.usd_price', price: @product.price)
-
-
+= render 'show_partial', product: @product

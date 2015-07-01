@@ -1,18 +1,36 @@
-.form
-  .fieldset
-    = f.label :name
-    = f.text_field :name
-  .fieldset
-    = f.label :description
-    = f.text_area :description, rows: 3
-  .fieldset
-    = f.label :price
-    = f.text_field :price
-  .fieldset
-    = f.label :currency
-    = f.select :currency, ["USD","EUR", "UAH"]
-  .fieldset
-    = f.label :picture
-    = f.file_field :picture
+-if product.errors.any?
+  .alert.alert-danger.alert-dismissable{role: "alert"}
+    %button.close{type: "button", data: {dismiss: "alert"} }
+      %span{aria: {hidden: "true"} } &times;
+      %span.sr-only Close
+    %h4= "#{pluralize(product.errors.count, "error")} prohibited this product from being saved:"
 
-= f.submit
+    %ul
+      - product.errors.full_messages.each do |msg|
+        %li= msg
+
+.form-group
+  = f.label :currency, class: 'col-sm-2 control-label'
+  .col-sm-10
+    = f.text_field :currency, class: 'form-control'
+.form-group
+  = f.label :description, class: 'col-sm-2 control-label'
+  .col-sm-10
+    = f.text_area :description, class: 'form-control'
+.form-group
+  = f.label :name, class: 'col-sm-2 control-label'
+  .col-sm-10
+    = f.text_field :name, class: 'form-control'
+.form-group
+  = f.label :price, class: 'col-sm-2 control-label'
+  .col-sm-10
+    = f.text_field :price, class: 'form-control'
+.form-group
+  = f.label :picture, class: 'col-sm-2 control-label'
+  .col-sm-10
+    = f.file_field :picture, class: 'form-control'
+.form-group
+  .col-sm-offset-2.col-sm-10
+    = f.submit class: 'btn btn-primary'
+    %button.preview.btn.btn-primary
+      =t('.preview')

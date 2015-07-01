@@ -1,0 +1,12 @@
+#preview_page
+  = render 'show_partial', product: @product
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      %button.submit.btn.btn-primary
+        =t('.submit')
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      %button.edit.btn.btn-primary
+        =t('.edit')

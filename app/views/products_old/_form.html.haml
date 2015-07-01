@@ -1,14 +1,27 @@
-.page-header
-  = link_to products_path, class: 'btn btn-default' do
-    %span.glyphicon.glyphicon-list-alt
-    Back
-  %h1 New product
-= form_for @product, html: { class: "form-horizontal", role: "form" } do |f|
-  = render 'form', f: f, product: @product
+.form
+  .fieldset
+    = f.label :name
+    = f.text_field :name
+  .fieldset
+    = f.label :description
+    = f.text_area :description, rows: 3
+  .fieldset
+    = f.label :price
+    = f.text_field :price
+  .fieldset
+    = f.label :currency
+    = f.select :currency, currency_for_select
+  .fieldset
+    = f.label :picture
+    = f.file_field :picture
 
+= f.submit
+-#- binding.pry
+#preview
+  = link_to "preview", preview_products_path, rel: "facebox"
 
 :javascript
-  $(".preview").on("click",function(e){
+  $("#preview").on("click","a",function(e){
     e.preventDefault()
     $.ajax({
       url: "/products/preview",
