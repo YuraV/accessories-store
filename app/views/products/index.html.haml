@@ -16,13 +16,12 @@
         %th
         %th
         %th
-
     %tbody
       - @products.each do |product|
         %tr
           %td= product.currency
           %td= product.description
-          %td= product.name
+          %td= product.title
           %td= product.price
           %td
             = image_tag product.picture.url(:thumb)

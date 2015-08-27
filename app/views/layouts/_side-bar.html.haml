@@ -1,0 +1,32 @@
+-##menu
+-#  .panel.list-group
+-#    - stub_items.each_with_index do |category, index|
+-#      %a.list-group-item{"data-parent" => "#menu", "data-target" => "item_#{index}", "data-toggle" => "collapse", :href => "#"}
+-#      = category
+-#      %span.label.label-info
+#menu
+  .panel.list-group
+    %a.list-group-item{"data-parent" => "#menu", "data-target" => "#sm", "data-toggle" => "collapse", :href => "#"}
+      = t('.filters')
+      %span.label.label-info 2
+      %span.glyphicon.glyphicon-triangle-right.pull-right
+    #sm.sublinks.collapse
+      %a.list-group-item.small
+        %span.glyphicon.glyphicon-chevron-right
+        inbox
+      %a.list-group-item.small
+        %span.glyphicon.glyphicon-chevron-right
+        sent
+    %a.list-group-item{"data-parent" => "#menu", "data-target" => "#sl", "data-toggle" => "collapse", :href => "#"}
+      = t('.helmets')
+      %span.glyphicon.glyphicon-triangle-right.pull-right
+    #sl.sublinks.collapse
+      %a.list-group-item.small
+        %span.glyphicon.glyphicon-chevron-right
+        saved tasks
+      %a.list-group-item.small
+        %span.glyphicon.glyphicon-chevron-right
+        add new task
+    %a.list-group-item{:href => "#"}
+      = t('.other')
+      %span.glyphicon.glyphicon-th-large.pull-right

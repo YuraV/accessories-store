@@ -1,6 +1,22 @@
-@import "bootstrap";
-@import "welcome";
+body {
+  .translation_missing {
+    color: red !important;
+  }
+  .side-bar {
+    position: fixed;
+  }
+  background-attachment: fixed;
+//  background-color: #353537;  dark
+  background-color: #d7d7d7;
 
-#main {
-  padding-top: 15px;
+//  background-image: linear-gradient(#4d4d50, #1e1e1f); dark
+  background-image: linear-gradient(#d7d7d7, #d7d7d7);
+  background-repeat: no-repeat;
+  margin: 0;
+
+  .navbar {
+    ul.nav > li > a {
+      padding: 15px;
+    }
+  }
 }

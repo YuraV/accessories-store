@@ -1,38 +1,50 @@
 class ProductsController < ApplicationController
   respond_to :html, :json, :js
 
-  before_filter :find_product, only: [:show, :edit]
+  helper_method :product
 
   def index
     @products = Product.all
   end
 
   def new
-    @product = Product.new params[:product]
+    respond_with product
+  end
+
+  def destroy
+    redirect_to products_path
   end
 
   def edit
-    respond_with @product
+    respond_with product
   end
 
   def create
-    @product = Product.create params[:product]
-    respond_with @product
+    product.create params[:product]
+    respond_with product
+  end
+
+  def update
+    product.update_attributes params[:product]
+    respond_with product
   end
 
   def show
-    respond_with @product
+    respond_with product
   end
 
   def preview
-    @product = Product.new(params[:product])
-    render :preview, layout: false, locals: { product: @product } if request.xhr?
-    # respond_with @product, location: preview_products_path(@product), laout: false
+    product = Product.new(params[:product])
+    render :preview, layout: false, locals: { product: product } if request.xhr?
   end
 
   private
-  def find_product
-    @product = Product.find(params[:id])
+  def product
+    @product =
+        if ['create', 'new'].include? params[:action]
+          Product.new
+        else
+          Product.find(params[:id])
+        end
   end
-
 end
