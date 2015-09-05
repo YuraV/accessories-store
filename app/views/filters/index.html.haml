@@ -1,0 +1,24 @@
+.page-header
+  = link_to new_filter_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Filter
+  %h1 Listing filters
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Title
+        %th Published
+        %th
+        %th
+        %th
+
+    %tbody
+      - @filters.each do |filter|
+        %tr
+          %td= filter.title
+          %td= filter.published
+          %td= link_to 'Show', filter
+          %td= link_to 'Edit', edit_filter_path(filter)
+          %td= link_to 'Destroy', filter, data: { confirm: 'Are you sure?' }, method: :delete

@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product.create params[:product]
+    product = Product.create params[:product]
     respond_with product
   end
 

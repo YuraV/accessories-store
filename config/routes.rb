@@ -1,4 +1,10 @@
 AccessoriesStore::Application.routes.draw do
+  resources :filters
+
+
+  resources :categories
+
+
   resources :products
 
 
