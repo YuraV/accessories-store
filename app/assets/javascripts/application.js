@@ -16,5 +16,7 @@
 //= require jquery.facebox
 //= require jquery.tmpl.min
 //= require underscore
+//= require jquery.multi-select
+//= require accessories_store
 //= require bootstrap
 //= require_tree .

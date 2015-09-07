@@ -21,9 +21,15 @@ class FiltersController < ApplicationController
   end
 
   def create
-    @filter = Filter.new(params[:filter])
+    category = Category.find(params[:filter].delete :hidden_category)
+    @filter = Filter.new(params[:filter].slice(Filter.accessible_attributes))
     @filter.save
-    respond_with(@filter)
+
+    respond_with @filter do |format|
+      format.html {
+        render partial: 'filters/for_category', locals: { category: category } if request.xhr?
+      }
+    end
   end
 
   def update

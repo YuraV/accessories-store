@@ -12,3 +12,17 @@
   %dd= @category.title
   %dt Published:
   %dd= @category.published
+
+.page-header
+  %h1 New Filter
+= render 'filters/form', category: @category
+
+= render 'filters/for_category', category: @category
+
+= button_tag(t('.synchronize_categories'), id: 'sync_filters', class: 'btn btn-primary')
+
+
+:javascript
+  $(function(){
+    new Store.Categories();
+  })

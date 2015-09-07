@@ -1,0 +1,5 @@
+#category_filters
+  .page-header
+    %h1 Populate category with filters
+  = select_tag( :filters, options_for_select(published_filters.map {|filter| [filter.title, filter.id]},
+                                          category.filters.map {|filter| [filter.id]}), multiple: true )
