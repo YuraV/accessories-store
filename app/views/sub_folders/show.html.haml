@@ -1,0 +1,14 @@
+.page-header
+  = link_to sub_folders_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_sub_folder_path(@sub_folder), class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show sub_folder
+
+%dl.dl-horizontal
+  %dt Title:
+  %dd= @sub_folder.title
+  %dt Published:
+  %dd= @sub_folder.published

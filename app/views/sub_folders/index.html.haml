@@ -1,0 +1,24 @@
+.page-header
+  = link_to new_sub_folder_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Sub folder
+  %h1 Listing sub_folders
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Title
+        %th Published
+        %th
+        %th
+        %th
+
+    %tbody
+      - sub_folders.each do |sub_folder|
+        %tr
+          %td= sub_folder.title
+          %td= sub_folder.published
+          %td= link_to 'Show', sub_folder
+          %td= link_to 'Edit', edit_sub_folder_path(sub_folder)
+          %td= link_to 'Destroy', sub_folder, data: { confirm: 'Are you sure?' }, method: :delete

@@ -1,0 +1,10 @@
+.page-header
+  = link_to sub_folders_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to @sub_folder, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-info-sign
+    Show
+  %h1 Editing sub_folder
+
+= render 'form'

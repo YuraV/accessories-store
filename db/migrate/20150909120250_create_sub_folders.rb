@@ -1,7 +1,8 @@
-class CreateCategories < ActiveRecord::Migration
+class CreateSubFolders < ActiveRecord::Migration
   def change
-    create_table :categories do |t|
+    create_table :sub_folders do |t|
       t.string :title
+      t.integer :category_id
       t.boolean :published, default: true
 
       t.timestamps

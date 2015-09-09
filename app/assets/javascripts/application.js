@@ -19,4 +19,5 @@
 //= require jquery.multi-select
 //= require accessories_store
 //= require bootstrap
+//= require jquery.facebox.js.erb
 //= require_tree .

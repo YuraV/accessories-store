@@ -1,0 +1,14 @@
+-#= form_for [category, sub_folder], html: { class: "form-inline", role: "form" } do |f|
+-#  .form-group
+-#    = f.label :title, class: 'sr-only'
+-#    .col-sm-10
+-#      = f.text_field :title, class: 'form-control'
+-#  .form-group
+-#    .col-sm-offset-2.col-sm-10
+-#      = f.submit class: 'btn btn-primary'
+-#
+
+= simple_form_for [category, sub_folder], html: { class: 'form-inline', role: :form } do |f|
+  .form-group
+    = f.input :title
+    = f.submit class: 'btn btn-primary'
